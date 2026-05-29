@@ -100,7 +100,7 @@ const logoutUser = async (req, res) => {
 const getUser = async (req, res) => {
   const user = req.user;
 
-  if (!User) {
+  if (!user) {
     return res.status(404).json({
       message: "User not found",
     });
@@ -127,7 +127,7 @@ const getAllUsers = async (req, res) => {
       users,
     });
   } catch (error) {
-    res.status(500).message({
+    res.status(500).json({
       message: "Server error",
     });
   }

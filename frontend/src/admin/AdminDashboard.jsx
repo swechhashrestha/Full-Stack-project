@@ -5,7 +5,6 @@ const AdminDashboard = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
 
-      {/* Sidebar */}
       <nav className="w-64 bg-black text-white flex flex-col p-5 space-y-4 shadow-lg">
         <h1 className="text-2xl font-bold mb-6 border-b-2">Admin <span className='text-amber-400'>Panel</span></h1>
 
@@ -31,7 +30,6 @@ const AdminDashboard = () => {
         </Link>
       </nav>
 
-      {/* Main Content */}
       <main className="flex-1 p-6">
         <div className="bg-white rounded-xl shadow-md p-6 min-h-full">
           <Outlet />

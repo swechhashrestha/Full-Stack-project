@@ -21,7 +21,7 @@ const Payment = () => {
         method="POST"
         className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md space-y-5"
       >
-        {/* Header */}
+      
         <div className="text-center">
           <h1 className="text-2xl font-bold text-green-600">
             eSewa Payment 💳
@@ -31,7 +31,6 @@ const Payment = () => {
           </p>
         </div>
 
-        {/* Payment Summary */}
         <div className="bg-gray-50 rounded-xl p-4 space-y-2">
           <div className="flex justify-between text-sm">
             <span>Total Amount</span>
@@ -46,7 +45,6 @@ const Payment = () => {
           </div>
         </div>
 
-        {/* Hidden Fields (IMPORTANT) */}
         <input type="hidden" name="amount" value={totalAmount} />
         <input type="hidden" name="tax_amount" value={0} />
         <input type="hidden" name="total_amount" value={totalAmount} />
@@ -71,7 +69,6 @@ const Payment = () => {
         />
         <input type="hidden" name="signature" value={signature} />
 
-        {/* Pay Button */}
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-600 active:scale-95 transition"
@@ -79,7 +76,6 @@ const Payment = () => {
           Pay with eSewa
         </button>
 
-        {/* Footer */}
         <p className="text-xs text-gray-400 text-center">
           You will be redirected to eSewa secure gateway
         </p>

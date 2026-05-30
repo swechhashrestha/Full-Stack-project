@@ -55,12 +55,12 @@ const Payment = () => {
         <input
           type="hidden"
           name="success_url"
-          value="http://localhost:9000/api/orders/success"
+          value={`${import.meta.env.VITE_API_URL}/api/orders/success`}
         />
         <input
           type="hidden"
           name="failure_url"
-          value="http://localhost:9000/api/orders/failure"
+          value={`${import.meta.env.VITE_API_URL}/api/orders/failure`}
         />
         <input
           type="hidden"

@@ -20,7 +20,7 @@ const Cart = () => {
       }));
 
       const res = await axios.post(
-        "http://localhost:9000/api/orders/create",
+        `${import.meta.env.VITE_API_URL}/api/orders/create`,
         { products },
         { withCredentials: true },
       );
@@ -86,7 +86,6 @@ const Cart = () => {
             </div>
           ))}
 
-          {/* Order Summary */}
           <div className="bg-white rounded-2xl shadow-md p-6 h-fit col-span-full sm:col-span-1 md:col-span-1">
             <h2 className="text-xl font-bold mb-4">Order Summary</h2>
 

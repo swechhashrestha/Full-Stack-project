@@ -7,9 +7,12 @@ const OrderManagement = () => {
 
   const getOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/orders/", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/orders/`,
+        {
+          withCredentials: true,
+        },
+      );
       setOrders(res.data.orders);
     } catch (error) {
       console.log("Failed to fetch orders", error);
@@ -45,7 +48,6 @@ const OrderManagement = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800">Order Management</h1>
         <p className="text-gray-500 text-sm mt-1">
@@ -53,10 +55,8 @@ const OrderManagement = () => {
         </p>
       </div>
 
-     
       <div className="bg-gray-50 rounded-2xl shadow-md overflow-hidden">
         <table className="w-full text-left">
-          
           <thead className="bg-gray-200 text-gray-600 text-sm uppercase ">
             <tr>
               <th className="p-4">Order ID</th>

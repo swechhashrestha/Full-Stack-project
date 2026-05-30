@@ -47,7 +47,7 @@ const success = async (req, res) => {
 
     console.log("Order updated:", updatedOrder);
 
-    res.redirect(`http://localhost:5173/success/${decoded.transaction_uuid}`);
+    res.redirect(`${process.env.FRONTEND_URL}/success/${decoded.transaction_uuid}`);
   } catch (error) {
     console.error("Payment success error:", error);
     res.status(500).json({
@@ -81,7 +81,7 @@ const getOrders = async (req, res) => {
       .populate("user_id", "fullName email")
       .populate("products.product_id", "title price");
 
-    console.log("ORDERS:", JSON.stringify(orders, null, 2)); // ✅ debug
+    console.log("ORDERS:", JSON.stringify(orders, null, 2));
 
     res.status(200).json({
       message: "Orders fetched successfully",

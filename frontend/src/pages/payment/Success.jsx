@@ -9,7 +9,7 @@ const Success = () => {
 
   const getOrder = async () => {
     try {
-      const res = await axios.get(`http://localhost:9000/api/orders/${id}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/${id}`);
       setOrder(res.data.order);
     } catch (error) {
       console.log("Failed to fetch order", error);

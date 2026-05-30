@@ -10,7 +10,7 @@ const Menu = () => {
   const getProducts = async () => {
     try {
       setLoading(true);
-      let res = await axios.get("http://localhost:9000/api/products/");
+      let res = await axios.get(`${import.meta.env.VITE_API_URL}/api/products/`);
       console.log(res.data);
       setProducts(res.data.products);
     } catch (error) {
@@ -60,7 +60,7 @@ const Menu = () => {
                 </h3>
 
                 <button
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => {navigate(`/menu/${product._id}`, { state: product })}}
                   className="mt-4 w-full bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-400 "
                 >
                   View Details

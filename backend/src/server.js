@@ -1,7 +1,5 @@
 require("dotenv").config();
 const app = require("./app");
-console.log("JWT:", process.env.JWT_SECRET);
-console.log("Cloudinary:", process.env.CLOUDINARY_API_KEY);
 const connectDB = require("./db");
 
 const startServer = async () => {

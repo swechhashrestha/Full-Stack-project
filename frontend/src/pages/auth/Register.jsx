@@ -14,7 +14,7 @@ const {setUser, setIsAuth } = useContext(AuthContext);
     e.preventDefault();
     try {
       let res = await axios.post(
-        "http://localhost:9000/api/auth/users/register",
+        `${import.meta.env.VITE_API_URL}/api/auth/users/register`,
         {
           fullName,
           email,

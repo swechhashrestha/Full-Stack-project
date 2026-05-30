@@ -16,7 +16,7 @@ const EditProduct = () => {
   const getProduct = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:9000/api/products/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/products/${id}`,
         { withCredentials: true }
       );
 
@@ -49,7 +49,7 @@ const EditProduct = () => {
       }
 
       const res = await axios.patch(
-        `http://localhost:9000/api/products/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/products/${id}`,
         formData,
         {
           withCredentials: true,

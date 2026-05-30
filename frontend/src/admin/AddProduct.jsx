@@ -21,7 +21,7 @@ const AddProduct = () => {
       formData.append("image", image);
 
       const res = await axios.post(
-        "http://localhost:9000/api/products/",
+        `${import.meta.env.VITE_API_URL}/api/products/`,
         formData,
         {
           withCredentials: true,

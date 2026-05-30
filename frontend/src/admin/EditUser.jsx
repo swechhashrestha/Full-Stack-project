@@ -16,7 +16,7 @@ const EditUser = () => {
   const getUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:9000/api/auth/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/auth/users/${id}`,
         { withCredentials: true },
       );
       console.log(res.data.user);
@@ -37,7 +37,7 @@ const EditUser = () => {
     e.preventDefault();
     try {
       let res = await axios.patch(
-        `http://localhost:9000/api/auth/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/auth/users/${id}`,
         {
           fullName,
           email,

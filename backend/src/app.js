@@ -8,11 +8,19 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigins = process.env.FRONTEND_URL.split(",");
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
-  }),
+  })
 );
 
 app.use("/api/auth/users", userRouter);
